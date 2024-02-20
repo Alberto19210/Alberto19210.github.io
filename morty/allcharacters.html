@@ -17,68 +17,9 @@
     </header>
     
 ----------------------------
-  <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu página</title>
-    <!-- Cualquier otra etiqueta meta, enlaces a CSS, etc. -->
-</head>
-<body>
-    <!-- Contenido de tu página -->
-    <div class="codigo">
-        <section id="home">
-            <div class="form-group">
-                <h1>Busca aquí tu personaje de Rick y Morty</h1>
-            </div>
-            <form id="formBuscar">
-                <div class="form-group">
-                    <input type="text" id="buscar" class="form-control" placeholder="Buscar personaje">
-                </div>
-                <div class="submit">
-                    <input type="submit" value="Buscar Personaje" id="btn2" class="btn btn-primary" />
-                </div>
-            </form>
-            <div class="personajes"></div>
-        </section>
-        <div class="btn"></div>
-    </div>
-    <!-- JavaScript al final del body -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var form = document.getElementById("formBuscar");
-
-            form.addEventListener("submit", function(event) {
-                event.preventDefault();
-                var searchTerm = document.getElementById("buscar").value;
-                buscarPersonaje(searchTerm);
-            });
-        });
-
-        function buscarPersonaje(searchTerm) {
 
 
-          ----------------------
 
-            fetch('https://rickandmortyapi.com/api/character/')
-  .then(res => res.json())
-  .then(function(resultadoApi) {
-    console.log(resultadoApi);
-    conjuntoPersonajes = resultadoApi.results;
-    console.log(conjuntoPersonajes);
-    siguientePagina = resultadoApi.info.next;
-    crearElementos(conjuntoPersonajes);
-  });
-            // Aquí debes realizar la lógica para buscar al personaje
-            // Por ejemplo, puedes hacer una solicitud AJAX a una API que proporcione los datos de los personajes
-            // Y luego mostrar los resultados en la página
-            // Debes implementar esta función según tus necesidades
-            console.log("Buscando personaje: " + searchTerm);
-        }
-    </script>
-</body>
-</html>
     ***************************
     <main>
     <a href="index.html"> <img id="navbar" src="img/portaLHOME.png"/></a>
