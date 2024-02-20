@@ -17,12 +17,27 @@
     </header>
     
 ----------------------------
-
-  <h1>Buscador de rick</h1>
+ <h1>Buscador de rick</h1>
 
     <div id="filters">
         <input type="text" id="name-filter" placeholder="Filtrado por nombre" >
-
+        <select id="status-filter">
+            <option value="">Filtrar por estado</option>
+            <option value="alive">Vivo</option>
+            <option value="dead">Muerto</option>
+            <option value="unknown">Desconocido</option>
+        </select>
+    </div>
+    
+    <div class="container">
+        <div id="characters">
+            <!-- Los personajes -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+ 
     ***************************
     <main>
     <a href="index.html"> <img id="navbar" src="img/portaLHOME.png"/></a>
