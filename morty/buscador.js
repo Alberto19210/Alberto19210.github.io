@@ -1,3 +1,14 @@
+****************************
+     fetch('https://rickandmortyapi.com/api/character/')
+  .then(res => res.json())
+  .then(function(resultadoApi) {
+    console.log(resultadoApi);
+    conjuntoPersonajes = resultadoApi.results;
+    console.log(conjuntoPersonajes);
+    siguientePagina = resultadoApi.info.next;
+    crearElementos(conjuntoPersonajes);
+  });
+****************************
 // Espera a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function() {
     // Selecciona el formulario de búsqueda por su ID
