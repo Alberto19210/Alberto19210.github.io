@@ -32,6 +32,17 @@ function buscarPersonaje(searchTerm) {
     // Aquí puedes hacer una solicitud AJAX a una API que proporcione los datos de los personajes
     // Por ejemplo, podrías usar la API de Rick and Morty: https://rickandmortyapi.com/
     // Dependiendo de la respuesta de la API, puedes mostrar los resultados en la página
+     *********************
+           fetch('https://rickandmortyapi.com/api/character/')
+  .then(res => res.json())
+  .then(function(resultadoApi) {
+    console.log(resultadoApi);
+    conjuntoPersonajes = resultadoApi.results;
+    console.log(conjuntoPersonajes);
+    siguientePagina = resultadoApi.info.next;
+    crearElementos(conjuntoPersonajes);
+  });
+     *************************
 
     // Ejemplo de solicitud de búsqueda ficticia
     var url = "https://ejemplo-api.com/buscar?query=" + encodeURIComponent(searchTerm);
