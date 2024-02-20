@@ -57,6 +57,19 @@
         });
 
         function buscarPersonaje(searchTerm) {
+
+
+          ----------------------
+
+            fetch('https://rickandmortyapi.com/api/character/')
+  .then(res => res.json())
+  .then(function(resultadoApi) {
+    console.log(resultadoApi);
+    conjuntoPersonajes = resultadoApi.results;
+    console.log(conjuntoPersonajes);
+    siguientePagina = resultadoApi.info.next;
+    crearElementos(conjuntoPersonajes);
+  });
             // Aquí debes realizar la lógica para buscar al personaje
             // Por ejemplo, puedes hacer una solicitud AJAX a una API que proporcione los datos de los personajes
             // Y luego mostrar los resultados en la página
