@@ -44,3 +44,46 @@ h1, #filters{
 .character-card img{
     width: 100%;
 }
+
+
+
+/* Colores */
+body {
+  background-color: #f0f7f4; /* Verde claro */
+}
+
+h1 {
+  color: #187a55; /* Verde oscuro */
+}
+
+#filters {
+  background-color: #d9f7eb; /* Verde claro suave */
+  border: 1px solid #b3e6d1; /* Verde medio */
+  border-radius: 10px;
+}
+
+/* Fuentes */
+h1, #filters input, #filters select {
+  font-family: "Roboto Condensed", sans-serif; /* Fuente más acorde */
+}
+
+/* Espaciado */
+.character-card {
+  margin: 15px; /* Mayor espacio */
+}
+
+/* Sombras y bordes */
+.character-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  border-radius: 12px;
+}
+
+/* Botón */
+#load-more-button {
+  background-color: #187a55; /* Verde oscuro */
+  color: white;
+  padding: 10px 20px; /* Mayor relleno */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
