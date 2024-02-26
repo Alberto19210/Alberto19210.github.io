@@ -1,3 +1,4 @@
+//parte1
 //lista de personajes 
 const charactersEl = document.getElementById('characters');
 const nameFilterEl = document.getElementById('name-filter');
@@ -7,6 +8,8 @@ const loadMoreButton = document.getElementById('load-more-button');
 let currentPage = 1;
 const charactersPerPage = 20;
 
+
+//parte2
 //peticion para lista de nombre filtrada
 async function getCharacters(name, status, page) {
   let url = `https://rickandmortyapi.com/api/character/?page=${page}`;
@@ -29,6 +32,8 @@ async function getCharacters(name, status, page) {
   return data.results;
 }
 
+
+//parte3
 // mostrar personajes
 async function displayCharacters(name, status) {
   //Limpiar el contenido del elemento 
@@ -56,6 +61,8 @@ async function displayCharacters(name, status) {
   loadMoreButton.disabled = !(data.info.pages > currentPage);
 }
 
+
+//parte4
 //funcion para cargar mas personajes 
 async function loadMoreCharacters() {
   currentPage++;
