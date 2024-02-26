@@ -1,3 +1,4 @@
+//lista de personajes 
 const charactersEl = document.getElementById('characters');
 const nameFilterEl = document.getElementById('name-filter');
 const statusFilterEl = document.getElementById('status-filter');
@@ -6,6 +7,7 @@ const loadMoreButton = document.getElementById('load-more-button');
 let currentPage = 1;
 const charactersPerPage = 20;
 
+//peticion para lista de nombre filtrada
 async function getCharacters(name, status, page) {
   let url = `https://rickandmortyapi.com/api/character/?page=${page}`;
 
@@ -19,16 +21,21 @@ async function getCharacters(name, status, page) {
       url += `status=${status}`;
     }
   }
-
+//filtrado y paguina 
   const response = await fetch(url);
+  //convierte en en formato JSON
   const data = await response.json();
-
+//resultado 
   return data.results;
 }
 
+// mostrar personajes
 async function displayCharacters(name, status) {
+  //Limpiar el contenido del elemento 
+  //Obtener los personajes 
   const characters = await getCharacters(name, status, currentPage);
-
+  
+//tarjetas
   charactersEl.innerHTML = '';
 
   // Renderizar los personajes
@@ -45,15 +52,17 @@ async function displayCharacters(name, status) {
 
     charactersEl.appendChild(card);
   }
-
+//desavilitar funcion cargar mas en el caso de que no haya mas personajes 
   loadMoreButton.disabled = !(data.info.pages > currentPage);
 }
 
+//funcion para cargar mas personajes 
 async function loadMoreCharacters() {
   currentPage++;
   displayCharacters(nameFilterEl.value, statusFilterEl.value);
 }
 
+//llamar a los primeros personajes 
 displayCharacters();
 
 nameFilterEl.addEventListener('input', () => {
@@ -66,4 +75,22 @@ statusFilterEl.addEventListener('change', () => {
   displayCharacters(nameFilterEl.value, statusFilterEl.value);
 });
 
+//evento cargar mas personajes 
 loadMoreButton.addEventListener('click', loadMoreCharacters);
+
+⢀⡴⠑⡄⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+⠸⡇⠀⠿⡀⠀⠀⠀⣀⡴⢿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠑⢄⣠⠾⠁⣀⣄⡈⠙⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⢀⡀⠁⠀⠀⠈⠙⠛⠂⠈⣿⣿⣿⣿⣿⠿⡿⢿⣆⠀⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⢀⡾⣁⣀⠀⠴⠂⠙⣗⡀⠀⢻⣿⣿⠭⢤⣴⣦⣤⣹⠀⠀⠀⢀⢴⣶⣆ 
+⠀⠀⢀⣾⣿⣿⣿⣷⣮⣽⣾⣿⣥⣴⣿⣿⡿⢂⠔⢚⡿⢿⣿⣦⣴⣾⠁⠸⣼⡿ 
+⠀⢀⡞⠁⠙⠻⠿⠟⠉⠀⠛⢹⣿⣿⣿⣿⣿⣌⢤⣼⣿⣾⣿⡟⠉⠀⠀⠀⠀⠀ 
+⠀⣾⣷⣶⠇⠀⠀⣤⣄⣀⡀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+⠀⠉⠈⠉⠀⠀⢦⡈⢻⣿⣿⣿⣶⣶⣶⣶⣤⣽⡹⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠀⠀⠀⠉⠲⣽⡻⢿⣿⣿⣿⣿⣿⣿⣷⣜⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣶⣮⣭⣽⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠀⠀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀ 
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⠿⠿⠿⠛⠉
+//GRACIAS POR SU ATENCION 
